@@ -24,6 +24,7 @@
 		2B16BAE02A8E508A00D58B65 /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B16BADF2A8E508A00D58B65 /* CharacterView.swift */; };
 		2B2CF6892A8F846E001D521D /* FilterText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2CF6882A8F846E001D521D /* FilterText.swift */; };
 		2B2CF68B2A8F95BC001D521D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2CF68A2A8F95BC001D521D /* DetailView.swift */; };
+		2B30111B2A90E3CE00BE239A /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B30111A2A90E3CE00BE239A /* CustomError.swift */; };
 		2BA809FF2A8E7302009DBD7C /* ExecuteCodeUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA809FE2A8E7302009DBD7C /* ExecuteCodeUI.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		2B16BADF2A8E508A00D58B65 /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
 		2B2CF6882A8F846E001D521D /* FilterText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterText.swift; sourceTree = "<group>"; };
 		2B2CF68A2A8F95BC001D521D /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		2B30111A2A90E3CE00BE239A /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		2BA809FE2A8E7302009DBD7C /* ExecuteCodeUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecuteCodeUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,6 +164,7 @@
 				2B16BAD02A8E319000D58B65 /* CharacterModel.swift */,
 				2B16BAD22A8E321A00D58B65 /* OriginModel.swift */,
 				2B16BAD42A8E323B00D58B65 /* LocationModel.swift */,
+				2B30111A2A90E3CE00BE239A /* CustomError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				2BA809FF2A8E7302009DBD7C /* ExecuteCodeUI.swift in Sources */,
 				2B16BACF2A8E307300D58B65 /* Provider.swift in Sources */,
 				2B16BADE2A8E477300D58B65 /* ImageCache.swift in Sources */,
+				2B30111B2A90E3CE00BE239A /* CustomError.swift in Sources */,
 				2B2CF68B2A8F95BC001D521D /* DetailView.swift in Sources */,
 				2B16BA9F2A8E2FB700D58B65 /* RickAndMortyAppIsmaelMartinezApp.swift in Sources */,
 				2B16BADC2A8E3AD300D58B65 /* CharacterViewModel.swift in Sources */,

@@ -24,7 +24,7 @@ struct FilterText: View {
         HStack{
             TextField("Buscar", text: $name)
             Button {
-                var filter = CharacterFilterModel(name: name, status: status, species: species, type: type, gender: gender)
+                let filter = CharacterFilterModel(name: name, status: status, species: species, type: type, gender: gender)
                 vm.filterCharacter(filter: filter)
             } label: {
                 Image(systemName: "magnifyingglass")
