@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CharacterView: View {
-    @StateObject var vm = CharacterViewModel()
+    @StateObject var vm = CharacterViewModel(provider: Provider())
     var body: some View {
         
         FilterText(vm: vm)

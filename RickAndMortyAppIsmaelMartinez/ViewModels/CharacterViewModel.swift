@@ -8,7 +8,11 @@
 import Foundation
 
 final class CharacterViewModel: ObservableObject {
-    private let provider = Provider()
+    private let provider: ProviderProtocol
+    
+    init(provider: ProviderProtocol){
+        self.provider = provider
+    }
     
     @Published var characterList = [CharacterModel]()
     @Published var searchText = ""

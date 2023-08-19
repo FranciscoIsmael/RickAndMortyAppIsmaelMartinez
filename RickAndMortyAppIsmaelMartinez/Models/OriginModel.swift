@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct OriginModel: Codable {
+struct OriginModel: Codable, Equatable {
     
     let name: String?
     let url: String?

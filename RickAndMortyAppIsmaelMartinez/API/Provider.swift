@@ -7,11 +7,16 @@
 
 import Foundation
 
-class Provider {
+class ProviderProtocol {
+    func getAllCharacters(page: Int?, completion: @escaping (Result<[CharacterModel], CustomError>) -> ()) {}
+    func filterCharacters(filter: CharacterFilterModel, completion: @escaping(Result<[CharacterModel], CustomError>) -> ()) {}
+}
+
+class Provider: ProviderProtocol {
     
     let baseUrl: String = "https://rickandmortyapi.com/api"
     
-    func getAllCharacters(page: Int?, completion: @escaping (Result<[CharacterModel], CustomError>) -> ()) {
+    override func getAllCharacters(page: Int?, completion: @escaping (Result<[CharacterModel], CustomError>) -> ()) {
         
         
         ImageCache.instance.getAllCharacters(id: 1) { characters in
@@ -67,7 +72,7 @@ class Provider {
 
     }
     
-    func filterCharacters(filter: CharacterFilterModel, completion: @escaping(Result<[CharacterModel], CustomError>) -> ()) {
+    override func filterCharacters(filter: CharacterFilterModel, completion: @escaping(Result<[CharacterModel], CustomError>) -> ()) {
         
         var endpoint: String = "/character/?name=\(filter.name)"
         

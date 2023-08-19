@@ -28,54 +28,16 @@ class ImageCache{
         return cache
     }()
     
-    func add(image: NSString, id: String) {
-        imageCache.setObject(image, forKey: id as NSString)
-    }
+//    func add(image: NSString, id: String) {
+//        imageCache.setObject(image, forKey: id as NSString)
+//    }
 //
-//    func remove(id: NSString) {
-//        imageCache.removeObject(forKey: id as NSString)
+//    
+//    func get(id: String) -> NSString? {
+//        return imageCache.object(forKey: id as NSString)
 //    }
     
-    func get(id: String) -> NSString? {
-        return imageCache.object(forKey: id as NSString)
-    }
-    
-//    func addAllImages(characterList: [CharacterModel], completion: @escaping(_ isLoad: Bool) -> ()){
-//
-//        DispatchQueue.global().async {
-//
-//            characterList.forEach{ character in
-//
-//                do {
-//                    let url = URL(string: character.image ?? "")
-//                    if let imgUrl = url {
-//
-//                        self.add(image: "\(imgUrl)" as NSString, id:  "\(character.id ?? 0)")
-//
-//
-////                        let data: Data = try Data(contentsOf: imgUrl)
-////
-////                        let image = UIImage(data: data)
-////                        if let saveImage = image {
-////                            self.add(image: saveImage, id: "\(character.id ?? 0)")
-////                        }
-//
-//                    }
-//
-//                } catch {
-//                    print("error cache adding all images")
-//                }
-//
-//            }
-//            DispatchQueue.main.async {
-//                completion(true)
-//            }
-//
-//        }
-//
-//
-//
-//    }
+
     
     func addAllCharacters(characters: [CharacterModel], id: Int){
         
@@ -115,48 +77,5 @@ class ImageCache{
 
     }
     
-//    static func saveImage(urlString: String, img: UIImage){
-//        let path = NSTemporaryDirectory().appending(UUID().uuidString)
-//        let url = URL(fileURLWithPath: path)
-//
-//        let data = img.jpegData(compressionQuality: 0.5)
-//        try? data?.write(to: url)
-//
-//        var dict = UserDefaults.standard.object(forKey: "ImageCache") as? [String:String]
-//        if dict != nil {
-//            dict = [String:String]()
-//        }
-//        dict![urlString] = path
-//        UserDefaults.standard.set(dict, forKey: "ImageCache")
-//
-//    }
-//
-//    static func loadImage(urlString: String, completion: @escaping(String, UIImage?) -> Void) {
-//
-//        if let dict = UserDefaults.standard.object(forKey: "ImageCache") as? [String:String] {
-//
-//            if let path = dict[urlString] {
-//                if let data = try? Data(contentsOf: URL(fileURLWithPath: path)) {
-//                    let img = UIImage(data: data)
-//                    completion(urlString, img)
-//                }
-//            }
-//        }
-//
-//        guard let url = URL(string: urlString) else { return }
-//
-//        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-//
-//            guard error == nil else { return }
-//            guard let d = data else { return }
-//            DispatchQueue.main.async {
-//                if let image = UIImage(data: d) {
-//                    saveImage(urlString: urlString, img: image)
-//                    completion(urlString, image)
-//                }
-//            }
-//        }
-//        task.resume()
-//    }
     
 }
