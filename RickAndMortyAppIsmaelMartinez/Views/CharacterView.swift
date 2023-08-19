@@ -12,7 +12,9 @@ struct CharacterView: View {
     var body: some View {
         
         FilterText(vm: vm)
-        
+        if !vm.errorMessage.isEmpty{
+            Text(vm.errorMessage).background(Color.red)
+        }
         NavigationView{
             
             VStack {

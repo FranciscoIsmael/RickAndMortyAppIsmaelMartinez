@@ -16,31 +16,27 @@ final class CharacterViewModel: ObservableObject {
     
     func getAllCharacters(page: Int?){
         provider.getAllCharacters(page: page) { result in
-//            ImageCache.instance.addAllImages(characterList: result) { isLoaded in
-//                if isLoaded {
-//                    var arrayAux = result
-//                    var index = 0
-//                    result.forEach{character in
-//
-//                        let imgCache = ImageCache.instance.get(id: "\(character.id ?? 0)") as! String
-//
-//                        arrayAux[index].uiImage = imgCache.data(using: .utf8)
-//                        index += 1
-//
-//                    }
-//
-//                    self.characterList = arrayAux
-//
-//                }
-//            }
-            self.characterList = result
+
+            switch result {
+            case .success(let characters):
+                self.characterList = characters
+                self.errorMessage = ""
+            case .failure(let error):
+                self.errorMessage = error.errorText
+            }
         }
     
     }
     
     func filterCharacter(filter: CharacterFilterModel){
-        let response = provider.filterCharacters(filter: filter) { result in
-            self.characterList = result
+        provider.filterCharacters(filter: filter) { result in
+            switch result {
+            case .success(let characters):
+                self.characterList = characters
+                self.errorMessage = ""
+            case .failure(let error):
+                self.errorMessage = error.errorText
+            }
         }
         
     }

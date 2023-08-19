@@ -31,69 +31,63 @@ class ImageCache{
     func add(image: NSString, id: String) {
         imageCache.setObject(image, forKey: id as NSString)
     }
-    
-    func remove(id: NSString) {
-        imageCache.removeObject(forKey: id as NSString)
-    }
+//
+//    func remove(id: NSString) {
+//        imageCache.removeObject(forKey: id as NSString)
+//    }
     
     func get(id: String) -> NSString? {
         return imageCache.object(forKey: id as NSString)
     }
     
-    func addAllImages(characterList: [CharacterModel], completion: @escaping(_ isLoad: Bool) -> ()){
-        
-        DispatchQueue.global().async {
-            
-            characterList.forEach{ character in
-                
-                do {
-                    let url = URL(string: character.image ?? "")
-                    if let imgUrl = url {
-                        
-                        self.add(image: "\(imgUrl)" as NSString, id:  "\(character.id ?? 0)")
-
-                        
-//                        let data: Data = try Data(contentsOf: imgUrl)
+//    func addAllImages(characterList: [CharacterModel], completion: @escaping(_ isLoad: Bool) -> ()){
 //
-//                        let image = UIImage(data: data)
-//                        if let saveImage = image {
-//                            self.add(image: saveImage, id: "\(character.id ?? 0)")
-//                        }
-                        
-                    }
-                    
-                } catch {
-                    print("error cache adding all images")
-                }
-               
-            }
-            DispatchQueue.main.async {
-                completion(true)
-            }
-            
-        }
-        
-        
-        
-    }
+//        DispatchQueue.global().async {
+//
+//            characterList.forEach{ character in
+//
+//                do {
+//                    let url = URL(string: character.image ?? "")
+//                    if let imgUrl = url {
+//
+//                        self.add(image: "\(imgUrl)" as NSString, id:  "\(character.id ?? 0)")
+//
+//
+////                        let data: Data = try Data(contentsOf: imgUrl)
+////
+////                        let image = UIImage(data: data)
+////                        if let saveImage = image {
+////                            self.add(image: saveImage, id: "\(character.id ?? 0)")
+////                        }
+//
+//                    }
+//
+//                } catch {
+//                    print("error cache adding all images")
+//                }
+//
+//            }
+//            DispatchQueue.main.async {
+//                completion(true)
+//            }
+//
+//        }
+//
+//
+//
+//    }
     
     func addAllCharacters(characters: [CharacterModel], id: Int){
         
         var arrayAux = [CharacterModel]()
         characters.forEach{ character in
-            let url =  URL(string: character.image ?? "")
             do {
                 let url = URL(string: character.image ?? "")
                 if let imgUrl = url {
 
                     let data: Data = try Data(contentsOf: imgUrl)
                     
-                    //check if the data can create an uiImage
-                    let uiimageTest: UIImage = UIImage(data: data)!
-                    if uiimageTest != nil {
-                        arrayAux.append(CharacterModel(id: character.id, name: character.name, status: character.status, type: character.type, gender: character.gender, origin: character.origin, location: character.location, image: character.image, episode: character.episode, url: character.url, created: character.created, uiImage: data))
-                    }
-
+                    arrayAux.append(CharacterModel(id: character.id, name: character.name, status: character.status, type: character.type, gender: character.gender, origin: character.origin, location: character.location, image: character.image, episode: character.episode, url: character.url, created: character.created, uiImage: data))
                 }
                 
             } catch {
@@ -101,12 +95,13 @@ class ImageCache{
             }
         }
         var characterCacheObject: CharacterCacheModel
-        if arrayAux.isEmpty {
-            characterCacheObject = CharacterCacheModel(characters: characters, id: id)
-
-        } else {
-            characterCacheObject = CharacterCacheModel(characters: arrayAux, id: id)
-        }
+        characterCacheObject = CharacterCacheModel(characters: characters, id: id)
+//        if arrayAux.isEmpty {
+//            characterCacheObject = CharacterCacheModel(characters: characters, id: id)
+//
+//        } else {
+//            characterCacheObject = CharacterCacheModel(characters: arrayAux, id: id)
+//        }
        
         
         self.characterCache.setObject(characterCacheObject, forKey: "\(id)" as NSString)
