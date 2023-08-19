@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LocationModel: Codable {
+struct LocationModel: Codable, Equatable {
     let name: String?
     let url: String?
 }

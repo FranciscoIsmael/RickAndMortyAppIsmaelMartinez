@@ -11,7 +11,7 @@ struct Characters: Codable {
     var results: [CharacterModel]?
 }
 
-struct CharacterModel: Codable, Identifiable {
+struct CharacterModel: Codable, Identifiable, Equatable {
     
     let id: Int?
     let name: String?
