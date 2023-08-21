@@ -39,10 +39,10 @@ class ImageCache{
     
 
     
-    func addAllCharacters(characters: [CharacterModel], id: Int){
+    func addAllCharacters(characters: Characters, id: Int){
         
         var arrayAux = [CharacterModel]()
-        characters.forEach{ character in
+        characters.results!.forEach{ character in
             do {
                 let url = URL(string: character.image ?? "")
                 if let imgUrl = url {
@@ -57,7 +57,8 @@ class ImageCache{
             }
         }
         var characterCacheObject: CharacterCacheModel
-        characterCacheObject = CharacterCacheModel(characters: characters, id: id)
+        let saveCharacers = Characters(info: characters.info ?? PageInfoModel(count: 0, pages: 0, next: "", prev: ""), results: arrayAux)
+        characterCacheObject = CharacterCacheModel(characters: saveCharacers, id: id)
 //        if arrayAux.isEmpty {
 //            characterCacheObject = CharacterCacheModel(characters: characters, id: id)
 //
@@ -70,10 +71,11 @@ class ImageCache{
         
     }
     
-    func getAllCharacters(id: Int, completion: @escaping([CharacterModel]) -> () ){
+    func getAllCharacters(id: Int, completion: @escaping(Characters) -> () ){
         let characterCacheObject =  characterCache.object(forKey: "\(id)" as NSString)
-        
-        completion(characterCacheObject?.characters ?? [])
+        let info = PageInfoModel(count: characterCacheObject?.count, pages: characterCacheObject?.pages, next: characterCacheObject?.next, prev: characterCacheObject?.prev)
+        let characters = Characters(info: info, results: characterCacheObject?.characters ?? [])
+        completion(characters)
 
     }
     

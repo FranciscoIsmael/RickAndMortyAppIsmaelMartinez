@@ -8,7 +8,19 @@
 import Foundation
 
 struct Characters: Codable {
+    var info: PageInfoModel?
     var results: [CharacterModel]?
+    
+    init(){
+        self.info = nil
+        self.results = []
+    }
+    
+    init(info: PageInfoModel, results: [CharacterModel]) {
+        self.info = info
+        self.results = results
+    }
+    
 }
 
 struct CharacterModel: Codable, Identifiable, Equatable {
@@ -32,11 +44,20 @@ struct CharacterModel: Codable, Identifiable, Equatable {
 }
 
 class CharacterCacheModel{
+    let count: Int?
+    let pages: Int?
+    let next: String?
+    let prev: String?
+    
     let characters: [CharacterModel]
     let id: Int
 
-    init(characters: [CharacterModel], id: Int) {
-        self.characters = characters
+    init(characters: Characters, id: Int) {
+        self.characters = characters.results ?? []
         self.id = id
+        self.count = characters.info?.count
+        self.pages = characters.info?.pages
+        self.next = characters.info?.next
+        self.prev = characters.info?.prev
     }
 }

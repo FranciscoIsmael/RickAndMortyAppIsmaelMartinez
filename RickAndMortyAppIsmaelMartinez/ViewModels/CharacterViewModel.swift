@@ -14,12 +14,12 @@ final class CharacterViewModel: ObservableObject {
         self.provider = provider
     }
     
-    @Published var characterList = [CharacterModel]()
+    @Published var characterList: Characters = Characters()
     @Published var searchText = ""
     @Published var errorMessage = ""
     
-    func getAllCharacters(page: Int?){
-        provider.getAllCharacters(page: page) { result in
+    func getAllCharacters(){
+        provider.getAllCharacters() { result in
 
             switch result {
             case .success(let characters):

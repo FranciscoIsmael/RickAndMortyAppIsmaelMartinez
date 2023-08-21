@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CharacterView: View {
+struct CharacterListView: View {
     @StateObject var vm = CharacterViewModel(provider: Provider())
     var body: some View {
         
@@ -19,24 +19,42 @@ struct CharacterView: View {
             
             VStack {
                 ScrollView{
-                        ForEach(vm.characterList){character in
+                    ForEach(vm.characterList.results ?? []){character in
                             
                             NavigationLink(destination: DetailView(character: character)){
                                 VStack{
-                                    Text(character.name ?? "").background(Color.white)
-                                    
+                                   
                                     if !(character.uiImage?.isEmpty ?? true) {
                                         Image(uiImage: UIImage(data: character.uiImage!) ?? UIImage(named: "placeholder.png")!)
                                     } else {
                                         AsyncImage(url: URL(string: character.image ?? ""))
                                     }
+                                    Text(character.name ?? "").background(Color.white)
                                     
                                 }
-                                
                             }
-
-
                         }
+                    
+                    HStack{
+                        if !(vm.characterList.info?.prev?.isEmpty ?? true){
+                            Button{
+                                PageSingleton.instance.page -= 1
+                                vm.getAllCharacters()
+                            }label: {
+                                Text("Anterior")
+                            }
+                        }
+                        Spacer()
+                        if !(vm.characterList.info?.next?.isEmpty ?? true){
+                            Button{
+                                PageSingleton.instance.page += 1
+                                vm.getAllCharacters()
+                            }label: {
+                                Text("Siguiente")
+                            }
+                        }
+                    }
+                    
                 }.background(Color.red)
                     .zIndex(2)
                     
@@ -44,7 +62,7 @@ struct CharacterView: View {
             }
             .padding()
             .onAppear{
-                vm.getAllCharacters(page: nil)
+                vm.getAllCharacters()
             }
             
             
