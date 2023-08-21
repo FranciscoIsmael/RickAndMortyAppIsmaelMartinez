@@ -13,10 +13,26 @@ class CharacterCacheModelTests: XCTestCase {
         let origin = OriginModel(name: "name", url: "url")
         let location = LocationModel(name: "name", url: "url")
         let character = CharacterModel(id: 0, name: "name", status: "status", type: "type", gender: "gender", origin: origin, location: location, image: "image", episode: ["episode","episode2"], url: "url", created: "created")
-        let characterCache = CharacterCacheModel(characters: [character, character], id: 1)
+        let info = PageInfoModel(count: 0, pages: 0, next: "next", prev: "prev")
+        let characters = Characters(info: info, results: [character,character])
+        let characterCache = CharacterCacheModel(characters: characters, id: 1)
         
         XCTAssertEqual(characterCache.id, 1)
         XCTAssertEqual(characterCache.characters, [character, character])
+        XCTAssertEqual(characterCache.count, 0)
+        XCTAssertEqual(characterCache.pages, 0)
+        XCTAssertEqual(characterCache.next, "next")
+        XCTAssertEqual(characterCache.prev, "prev")
+    }
+}
+
+class PageInfoModelTests: XCTestCase {
+    func test_init(){
+        let info = PageInfoModel(count: 0, pages: 0, next: "next", prev: "prev")
+        XCTAssertEqual(info.count, 0)
+        XCTAssertEqual(info.pages, 0)
+        XCTAssertEqual(info.next, "next")
+        XCTAssertEqual(info.prev , "prev")
     }
 }
 
@@ -25,7 +41,10 @@ class CharactersModelTests: XCTestCase{
         let origin = OriginModel(name: "name", url: "url")
         let location = LocationModel(name: "name", url: "url")
         let character = CharacterModel(id: 0, name: "name", status: "status", type: "type", gender: "gender", origin: origin, location: location, image: "image", episode: ["episode","episode2"], url: "url", created: "created")
-       let characters = Characters(results: [character,character])
+        
+        let info = PageInfoModel(count: 0, pages: 0, next: "next", prev: "prev")
+        
+        let characters = Characters(info: info, results: [character,character])
         XCTAssertTrue(characters.results?.count != 0)
         
     }
