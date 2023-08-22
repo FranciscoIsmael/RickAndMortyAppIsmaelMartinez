@@ -17,6 +17,7 @@ final class CharacterViewModel: ObservableObject {
     @Published var characterList: Characters = Characters()
     @Published var searchText = ""
     @Published var errorMessage = ""
+    var filterUsed: CharacterFilterModel?
     
     func getAllCharacters(){
         provider.getAllCharacters() { result in
@@ -33,6 +34,7 @@ final class CharacterViewModel: ObservableObject {
     }
     
     func filterCharacter(filter: CharacterFilterModel){
+        self.filterUsed = filter
         provider.filterCharacters(filter: filter) { result in
             switch result {
             case .success(let characters):
@@ -45,5 +47,14 @@ final class CharacterViewModel: ObservableObject {
         
     }
     
+    func changePage(){
+        
+        if filterUsed?.name.isEmpty ?? true {
+            getAllCharacters()
+        } else {
+            filterCharacter(filter: filterUsed ?? CharacterFilterModel(name: "", status: nil, species: nil, type: nil, gender: nil))
+        }
+        
+    }
     
 }

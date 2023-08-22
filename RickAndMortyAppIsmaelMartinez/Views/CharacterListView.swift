@@ -11,13 +11,13 @@ struct CharacterListView: View {
     @StateObject var vm = CharacterViewModel(provider: Provider())
     var body: some View {
         
-        FilterText(vm: vm)
+        
         if !vm.errorMessage.isEmpty{
             Text(vm.errorMessage).background(Color.red)
         }
         NavigationView{
-            
             VStack {
+                FilterText(vm: vm)
                 ScrollView{
                     ForEach(vm.characterList.results ?? []){character in
                             
@@ -29,7 +29,7 @@ struct CharacterListView: View {
                                     } else {
                                         AsyncImage(url: URL(string: character.image ?? ""))
                                     }
-                                    Text(character.name ?? "").background(Color.white)
+                                    Text(character.name ?? "")
                                     
                                 }
                             }
@@ -37,9 +37,11 @@ struct CharacterListView: View {
                     
                     HStack{
                         if !(vm.characterList.info?.prev?.isEmpty ?? true){
+                            
+                            
                             Button{
-                                PageSingleton.instance.page -= 1
-                                vm.getAllCharacters()
+                                PageSingleton.instance.prev()
+                                vm.changePage()
                             }label: {
                                 Text("Anterior")
                             }
@@ -47,16 +49,15 @@ struct CharacterListView: View {
                         Spacer()
                         if !(vm.characterList.info?.next?.isEmpty ?? true){
                             Button{
-                                PageSingleton.instance.page += 1
-                                vm.getAllCharacters()
+                                PageSingleton.instance.next()
+                                vm.changePage()
                             }label: {
                                 Text("Siguiente")
                             }
                         }
                     }
                     
-                }.background(Color.red)
-                    .zIndex(2)
+                }
                     
                 
             }
