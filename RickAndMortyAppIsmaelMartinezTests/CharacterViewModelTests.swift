@@ -54,5 +54,26 @@ final class CharacterViewModelTests: XCTestCase {
         XCTAssertEqual(vm.errorMessage, "filterCharactersError")
 
     }
+    
+    func test_changePage_filter(){
+        let exp = expectation(description: "changePage")
+        let vm = CharacterViewModel(provider: MockProviderError(expectation: exp))
+        
+        let filter = CharacterFilterModel(name: "error", status: "status", species: "species", type: "type", gender: "gender")
+        vm.filterUsed = filter
+        vm.changePage()
+        
+        waitForExpectations(timeout: 0.5)
+        XCTAssertEqual(vm.errorMessage, "filterCharactersError")
+    }
+    func test_changePage(){
+        let exp = expectation(description: "changePage")
+        let vm = CharacterViewModel(provider: MockProviderError(expectation: exp))
+        
+        vm.changePage()
+        
+        waitForExpectations(timeout: 0.5)
+        XCTAssertEqual(vm.errorMessage, "getAllCharactersError")
+    }
 }
 

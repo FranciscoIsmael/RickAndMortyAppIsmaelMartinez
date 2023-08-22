@@ -92,3 +92,28 @@ class CustomErroModelTests: XCTestCase {
         XCTAssertEqual(cError.errorText, "error")
     }
 }
+
+class PageSingletonTests: XCTestCase {
+    func test_init(){
+        XCTAssertEqual(PageSingleton.instance.page, 1)
+    }
+    
+   
+    func test_prev_notNegative(){
+        PageSingleton.instance.page = 1
+        PageSingleton.instance.prev()
+        XCTAssertEqual(PageSingleton.instance.page, 1)
+    }
+    func test_prev(){
+        PageSingleton.instance.page = 1
+        PageSingleton.instance.next()
+        PageSingleton.instance.next()
+        PageSingleton.instance.prev()
+        XCTAssertEqual(PageSingleton.instance.page, 2)
+    }
+    func test_next(){
+        PageSingleton.instance.page = 1
+        PageSingleton.instance.next()
+        XCTAssertEqual(PageSingleton.instance.page, 2)
+    }
+}

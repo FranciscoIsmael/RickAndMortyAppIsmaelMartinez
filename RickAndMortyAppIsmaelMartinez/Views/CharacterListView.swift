@@ -11,13 +11,12 @@ struct CharacterListView: View {
     @StateObject var vm = CharacterViewModel(provider: Provider())
     var body: some View {
         
-        
-        if !vm.errorMessage.isEmpty{
-            Text(vm.errorMessage).background(Color.red)
-        }
         NavigationView{
             VStack {
                 FilterText(vm: vm).accessibility(identifier: "filterText")
+                if !vm.errorMessage.isEmpty{
+                    Text(vm.errorMessage).background(Color.red)
+                }
                 ScrollView{
                     ForEach(vm.characterList.results ?? []){character in
                             
