@@ -13,11 +13,11 @@ struct FilterText: View {
     @StateObject var vm: CharacterViewModel
     @State private var show: Bool = false
     
-    @State private var name: String = ""
-    @State private var status: String = ""
-    @State private var species: String = ""
-    @State private var type: String = ""
-    @State private var gender: String = ""
+    @State var name: String = ""
+    @State var status: String = ""
+    @State var species: String = ""
+    @State var type: String = ""
+    @State var gender: String = ""
     
     
     var body: some View{
@@ -25,6 +25,7 @@ struct FilterText: View {
             TextField("Buscar", text: $name)
             Button {
                 let filter = CharacterFilterModel(name: name, status: status, species: species, type: type, gender: gender)
+                PageSingleton.instance.page = 1
                 vm.filterCharacter(filter: filter)
             } label: {
                 Image(systemName: "magnifyingglass")
@@ -47,6 +48,18 @@ struct FilterText: View {
                     
                 }.padding()
             }
-        }.padding()
+            Button{
+                status = ""
+                species = ""
+                type = ""
+                gender = ""
+                name = ""
+            }label: {
+                Image(systemName: "trash")
+            }
+        }.padding().overlay(
+            RoundedRectangle(cornerRadius: 16)
+                .stroke(.black, lineWidth: 1)
+        )
     }
 }

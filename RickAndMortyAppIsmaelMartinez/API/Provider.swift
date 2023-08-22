@@ -88,7 +88,16 @@ class Provider: ProviderProtocol {
     
     override func filterCharacters(filter: CharacterFilterModel, completion: @escaping(Result<Characters, CustomError>) -> ()) {
         
-        var endpoint: String = "/character/?name=\(filter.name)"
+        
+        
+        var endpoint: String = "/character/"
+        
+        if PageSingleton.instance.page != 1 {
+            endpoint = "\(endpoint)?page=\(PageSingleton.instance.page)&name=\(filter.name)"
+        } else {
+            endpoint = "\(endpoint)?name=\(filter.name)"
+        }
+        
         
         if !(filter.status?.isEmpty ?? true) {
             endpoint = "\(endpoint)&status=\(filter.status ?? "")"
@@ -130,10 +139,12 @@ class Provider: ProviderProtocol {
                 } else {
                     let characterList = try! JSONDecoder().decode(Characters.self, from: data)
                     
-                    
+                    ImageCache.instance.addAllCharacters(characters: characterList, id: 1)
                     DispatchQueue.main.async {
                         completion(.success(characterList))
                     }
+                    
+                    
                 }
             }
             
