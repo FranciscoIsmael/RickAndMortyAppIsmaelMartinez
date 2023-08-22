@@ -17,7 +17,7 @@ struct CharacterListView: View {
         }
         NavigationView{
             VStack {
-                FilterText(vm: vm)
+                FilterText(vm: vm).accessibility(identifier: "filterText")
                 ScrollView{
                     ForEach(vm.characterList.results ?? []){character in
                             

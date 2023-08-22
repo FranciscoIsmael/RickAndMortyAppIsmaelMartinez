@@ -7,8 +7,8 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "88C615ED-9B8E-4AE1-853B-B176EC7A4C69"
-            shouldBeEnabled = "No"
+            uuid = "BCCEC286-30DC-4189-ACCB-86865A5727BF"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RickAndMortyAppIsmaelMartinez/Views/DetailView.swift"
@@ -23,8 +23,8 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "591009C0-F7BA-4F33-8A03-5F4B47131843"
-            shouldBeEnabled = "No"
+            uuid = "D769C9FE-0884-45DE-9952-93B5A63EE52D"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RickAndMortyAppIsmaelMartinez/Views/DetailView.swift"
@@ -39,8 +39,8 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D6C2E04B-503C-4DED-8C90-D1F23AF283F4"
-            shouldBeEnabled = "No"
+            uuid = "70FEC5A2-107D-4AA6-9071-10141D4D6788"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RickAndMortyAppIsmaelMartinez/Views/CharacterListView.swift"
@@ -55,7 +55,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "75C0793C-0533-4996-AC39-4257CF0C3A68"
+            uuid = "E24198EA-1692-45D7-9A3F-AA407661538D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -71,72 +71,8 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F29F50A1-6E79-437D-A041-1A1070EE395E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RickAndMortyAppIsmaelMartinez/API/Provider.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
-            landmarkName = "filterCharacters(filter:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F46E979B-F113-4B6E-9647-3AB602DF5E07"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RickAndMortyAppIsmaelMartinez/API/Provider.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "filterCharacters(filter:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F46E979B-F113-4B6E-9647-3AB602DF5E07 - 159e5cde5a565c41"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RickAndMortyAppIsmaelMartinez.Provider.filterCharacters(filter: RickAndMortyAppIsmaelMartinez.CharacterFilterModel, completion: (Swift.Result&lt;RickAndMortyAppIsmaelMartinez.Characters, RickAndMortyAppIsmaelMartinez.CustomError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "RickAndMortyAppIsmaelMartinez"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ismael2/Desktop/RickAndMortyAppIsmaelMartinez/RickAndMortyAppIsmaelMartinez/API/Provider.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "120"
-                  endingLineNumber = "120"
-                  offsetFromSymbolStart = "5748">
-               </Location>
-               <Location
-                  uuid = "F46E979B-F113-4B6E-9647-3AB602DF5E07 - 159e5cde5a565c41"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RickAndMortyAppIsmaelMartinez.Provider.filterCharacters(filter: RickAndMortyAppIsmaelMartinez.CharacterFilterModel, completion: (Swift.Result&lt;RickAndMortyAppIsmaelMartinez.Characters, RickAndMortyAppIsmaelMartinez.CustomError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "RickAndMortyAppIsmaelMartinez"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ismael2/Desktop/RickAndMortyAppIsmaelMartinez/RickAndMortyAppIsmaelMartinez/API/Provider.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "120"
-                  endingLineNumber = "120"
-                  offsetFromSymbolStart = "6320">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A3066771-2236-4C7A-A999-89CFCF0C89EE"
-            shouldBeEnabled = "No"
+            uuid = "2324105C-AEA5-4FD9-9E6B-0A0F31BF78A5"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RickAndMortyAppIsmaelMartinez/API/Provider.swift"
@@ -144,6 +80,118 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
             endingLineNumber = "42"
+            landmarkName = "getAllCharacters(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8BF967AE-CCC8-49CF-8F19-445567D3DA18"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RickAndMortyAppIsmaelMartinez/API/Provider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "getAllCharacters(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "43BE9DDE-FD56-455F-A9E2-109B00D7484C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RickAndMortyAppIsmaelMartinez/API/Provider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "filterCharacters(filter:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BE54FA79-4349-49DF-9783-3CC2043C59AF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RickAndMortyAppIsmaelMartinez/API/Provider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "getAllCharacters(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BE54FA79-4349-49DF-9783-3CC2043C59AF - 7977b920e23f26ed"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RickAndMortyAppIsmaelMartinez.Characters) -&gt; () in RickAndMortyAppIsmaelMartinez.Provider.getAllCharacters(completion: (Swift.Result&lt;RickAndMortyAppIsmaelMartinez.Characters, RickAndMortyAppIsmaelMartinez.CustomError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "RickAndMortyAppIsmaelMartinez"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ismael2/Desktop/RickAndMortyAppIsmaelMartinez/RickAndMortyAppIsmaelMartinez/API/Provider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "656">
+               </Location>
+               <Location
+                  uuid = "BE54FA79-4349-49DF-9783-3CC2043C59AF - 1ad604c3a6cb539a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; Swift.Int in closure #1 (RickAndMortyAppIsmaelMartinez.Characters) -&gt; () in RickAndMortyAppIsmaelMartinez.Provider.getAllCharacters(completion: (Swift.Result&lt;RickAndMortyAppIsmaelMartinez.Characters, RickAndMortyAppIsmaelMartinez.CustomError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "RickAndMortyAppIsmaelMartinez"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ismael2/Desktop/RickAndMortyAppIsmaelMartinez/RickAndMortyAppIsmaelMartinez/API/Provider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D70369D1-64D7-45D1-96E3-4BE6AC68B158"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RickAndMortyAppIsmaelMartinez/API/Provider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "getAllCharacters(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DDC195A5-7CEA-457D-8C95-6DE8FB2BFB53"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RickAndMortyAppIsmaelMartinez/API/Provider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "getAllCharacters(completion:)"
             landmarkType = "7">
          </BreakpointContent>

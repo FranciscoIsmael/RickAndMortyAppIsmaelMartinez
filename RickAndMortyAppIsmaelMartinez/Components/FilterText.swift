@@ -22,14 +22,14 @@ struct FilterText: View {
     
     var body: some View{
         HStack{
-            TextField("Buscar", text: $name)
+            TextField("Buscar", text: $name).accessibility(identifier: "searchText")
             Button {
                 let filter = CharacterFilterModel(name: name, status: status, species: species, type: type, gender: gender)
                 PageSingleton.instance.page = 1
                 vm.filterCharacter(filter: filter)
             } label: {
                 Image(systemName: "magnifyingglass")
-            }
+            }.accessibility(identifier: "searchButton")
             
             Spacer()
             
@@ -40,10 +40,10 @@ struct FilterText: View {
                 Image(systemName: "list.bullet.rectangle.portrait")
             }.sheet(isPresented: $show){
                 VStack{
-                    TextField("Buscar estatus", text: $status)
-                    TextField("Buscar especie", text: $species)
-                    TextField("Buscar tipo", text: $type)
-                    TextField("Buscar genero", text: $gender)
+                    TextField("Buscar estatus", text: $status).accessibility(identifier: "statusText")
+                    TextField("Buscar especie", text: $species).accessibility(identifier: "speciesText")
+                    TextField("Buscar tipo", text: $type).accessibility(identifier: "typeText")
+                    TextField("Buscar genero", text: $gender).accessibility(identifier: "genderText")
 
                     
                 }.padding()
@@ -56,7 +56,7 @@ struct FilterText: View {
                 name = ""
             }label: {
                 Image(systemName: "trash")
-            }
+            }.accessibility(identifier: "DleteButton")
         }.padding().overlay(
             RoundedRectangle(cornerRadius: 16)
                 .stroke(.black, lineWidth: 1)
