@@ -28,7 +28,7 @@ struct DetailView: View {
                     Text("Género: \(character.gender ?? "???")")
                     Text("Orígen: \(character.origin?.name ?? "???")")
                     Text("Localización: \(character.location?.name ?? "???")")
-                    Text(character.created ?? "???")
+                    Text("Created: \(character.created ?? "???")")
                     Text("Episodios:")
                     ScrollView{
                         

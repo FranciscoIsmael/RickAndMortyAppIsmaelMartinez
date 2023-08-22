@@ -25,8 +25,8 @@ class Provider: ProviderProtocol {
             
             let currentPage: Int = {
                 
-                let nextPage = characters.info?.next?.last?.wholeNumberValue
-                let prevPage = characters.info?.prev?.last?.wholeNumberValue
+                let nextPage = characters.info?.next?.split(separator: "page=").last?.first?.wholeNumberValue
+                let prevPage = characters.info?.prev?.split(separator: "page=").last?.last?.wholeNumberValue
                 
                 if nextPage != nil {
                     return nextPage! - 1
